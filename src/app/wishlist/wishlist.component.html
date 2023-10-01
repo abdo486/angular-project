@@ -1,0 +1,28 @@
+<div>
+
+  <div  *ngFor="let x of wishlistProd">
+    <div class="row align-items-center bg-light my-2">
+      <div  class="col-2">
+        <div class="wish-img ">
+          <img [src]="x.imageCover" class="w-100" >
+        </div>
+      </div>
+      <div class="col-10 d-flex justify-content-between ">
+        <div>
+          <h6>{{x.price}}</h6>
+          <h6>{{x.title}}</h6>
+          <button (click)="deleteWish(x._id)" class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i>remove</button>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</div>

@@ -1,0 +1,40 @@
+
+<div class="row gy-4 ">
+  <h2 class="text-center text-success mb-3">All products</h2>
+
+<div>
+  <input [(ngModel)]="searchValue" type="text" class="w-75 form-control m-auto">
+
+</div>
+
+  <div *ngFor="let x of arrprod | search : searchValue ; let last = last " class="col-md-3 cursor-p b-s p-3 position-relative ">
+    <div [routerLink]="['/details', x._id]">
+      <div class="text-center">
+        <img  [src]="x.imageCover" alt="productImage" class="w-100">
+
+      </div>
+      <p class="c-g">{{x.category.name}}</p>
+      <p>{{x.title}}</p>
+
+      <div class="d-flex justify-content-between mb-5">
+        <p>{{x.price}} EGp</p>
+        <div>
+          <i class="fa fa-star gold "></i>
+          <span>{{x.ratingsAverage}}</span>
+
+        </div>
+      </div>
+
+
+    </div>
+    <div class="btn-heart">
+      <button (click)="addProd(x._id)" class="btn btn-success position-absolute top-120">+Add cart</button>
+      <i (click)="addProdWishlist(x._id)" class="fa-solid fa-heart position-absolute h3 right-top"></i>
+
+    </div>
+
+
+  </div>
+</div>
+
+

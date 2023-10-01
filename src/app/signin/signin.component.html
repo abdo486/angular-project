@@ -1,0 +1,32 @@
+<div >
+  <div>
+    <h3 class="alert alert-danger" *ngIf="errMessage">{{errMessage}}</h3>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)" >
+
+    <div class="mb-3">
+      <label for="email" >email</label>
+    <input formControlName="email"  type="email" class=" form-control" id="email" name="email">
+    <div *ngIf="loginForm.get('email')?.errors&&loginForm.get('email')?.touched">
+      <p class="alert alert-danger" *ngIf="loginForm.get('email')?.getError('required')">invalid required</p>
+      <p class="alert alert-danger" *ngIf="loginForm.get('email')?.getError('email')">invalid email</p>
+    </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" >password</label>
+    <input formControlName="password"  type="password" class=" form-control" id="password" name="password">
+    <div *ngIf="loginForm.get('password')?.errors&&loginForm.get('password')?.touched">
+      <p class="alert alert-danger" *ngIf="loginForm.get('password')?.getError('required')">invalid required</p>
+      <p class="alert alert-danger" *ngIf="loginForm.get('password')?.getError('pattern')">invalid password</p>
+    </div>
+
+    </div>
+
+    <button *ngIf="!loading" [disabled]="loginForm.invalid" type="submit"  class="btn btn-info">submit</button>
+    <button *ngIf="loading"   class="btn btn-info">
+      <i class="fa-solid fa-spinner fa-spin"></i>
+    </button>
+    <a class="ms-3" routerLink="/forgetpassword">forget password ?</a>
+
+  </form>
+</div>

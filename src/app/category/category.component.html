@@ -1,0 +1,19 @@
+<h2 class="text-center text-success mb-3">All categories</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+  <div class="col " *ngFor="let data of catarr">
+    <div class="card h-100 b-s">
+      <img height="400" [src]="data.image" class="card-img-top ob-f-c" alt="categoryImage">
+      <div class="card-body">
+        <h3 class="card-title c-g text-center">{{data.name}}</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+

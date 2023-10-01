@@ -1,0 +1,16 @@
+
+<h2 class="text-center text-success mb-3">All Brands</h2>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+
+
+
+  <div class="col" *ngFor="let x of arrbrands;let last = last">
+    <div class="card b-s">
+      <img [src]="x.image" alt="brandImage" class="card-img-top" >
+      <div class="card-body">
+        <h5 class="card-title">{{x.name}}</h5>
+      </div>
+    </div>
+  </div>
+
+</div>

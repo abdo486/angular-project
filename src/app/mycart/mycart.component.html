@@ -1,0 +1,38 @@
+<div>
+
+  <h4>total price : <span class="text-success">{{cartArr?.totalCartPrice}}</span></h4>
+
+  <div  *ngFor="let x of cartArr?.products">
+    <div class="row align-items-center bg-light my-2" *ngIf="x.count >0">
+      <div  class="col-2">
+        <div class="cart-img ">
+          <img [src]="x.product.imageCover" class="w-100" >
+        </div>
+      </div>
+      <div class="col-10 d-flex justify-content-between ">
+        <div>
+          <h6>{{x.price}}</h6>
+          <h6>{{x.product.title}}</h6>
+          <button (click)="deleteCart(x.product._id)" class="btn btn-outline-danger"><i class="fa-regular fa-trash-can"></i>remove</button>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <button (click)="updateCart(x.product._id,x.count+1)" class="btn btn-outline-success">+</button>
+          <span class="mx-2">{{x.count}}</span>
+          <button (click)="updateCart(x.product._id,x.count-1)" class="btn btn-outline-success">-</button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <a routerLink="/check" class="btn btn-success my-4">payonline</a>
+</div>
+
+
+
+

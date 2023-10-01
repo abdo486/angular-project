@@ -1,0 +1,9 @@
+<form [formGroup]="checkForm" (ngSubmit)="checkPay(checkForm)" >
+  <label>details</label>
+  <input formControlName="details" type="text" class="form-control">
+  <label>phone</label>
+  <input formControlName="phone" type="tel" class="form-control">
+  <label>city</label>
+  <input formControlName="city" type="text" class="form-control">
+  <button>submit</button>
+</form>
