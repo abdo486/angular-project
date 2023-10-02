@@ -29,19 +29,19 @@ export class CartService {
   addCart(id:string):Observable<any>{
    return this._HttpClient.post(`${this.baseUrl}/api/v1/cart`,{
       productId:id
-    })
+    },{headers:this.headerData})
   }
   getLoggedCart():Observable<any>{
-   return this._HttpClient.get(`${this.baseUrl}/api/v1/cart`)
+   return this._HttpClient.get(`${this.baseUrl}/api/v1/cart`,{headers:this.headerData})
   }
   removeCart(id:string):Observable<any>{
-   return this._HttpClient.delete(`${this.baseUrl}/api/v1/cart/${id}`)
+   return this._HttpClient.delete(`${this.baseUrl}/api/v1/cart/${id}`,{headers:this.headerData})
   }
 
   updateCart(id:string,count:number):Observable<any>{
     return this._HttpClient.put(`${this.baseUrl}/api/v1/cart/${id}`,{
       count:count
-     })
+     },{headers:this.headerData})
    }
 
    checkCart(id:string,shippingAddress:any):Observable<any>{

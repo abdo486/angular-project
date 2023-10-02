@@ -24,7 +24,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MainsliderComponent } from './mainslider/mainslider.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { AddheaderInterceptor } from './interceptor/addheader.interceptor';
 import { SearchPipe } from './search.pipe';
 import { LoaderComponent } from './loader/loader.component';
 import { LoaderInterceptor } from './loader.interceptor';
@@ -66,11 +65,7 @@ FormsModule
 
   ],
   providers: [
-    {
-      provide:HTTP_INTERCEPTORS,
-      useClass:AddheaderInterceptor,
-      multi:true
-    },
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoaderInterceptor,

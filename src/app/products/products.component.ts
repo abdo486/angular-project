@@ -22,7 +22,7 @@ export class ProductsComponent {
 
 
   }
-  
+
 
   getproducts(){
     return this._DataService.getdata('products').subscribe((r)=>{
@@ -43,7 +43,7 @@ export class ProductsComponent {
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title:`${e.message} you have ${e.numOfCartItems}` ,
+            title:`${e?.message} you have ${e?.numOfCartItems}` ,
             showConfirmButton: false,
             timer: 1500
           })
